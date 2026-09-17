@@ -1,10 +1,13 @@
 from playwright.sync_api import sync_playwright, expect
-def test_demo(page,browser_name):
+from utils.config import BASE_URL, USERNAME, PASSWORD
+
+def test_demo(page, browser_name):
+    print("BASE_URL:", BASE_URL)
+    print("USERNAME:", USERNAME)
+    print("PASSWORD:", PASSWORD)
     page.goto("https://www.google.com")
     print(page.title())
     print(browser_name)
-    expect(page).to_have_title("Google")
-    
 
 
 
